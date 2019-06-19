@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <title>JDE - Orchestration List</title>
+        
+        <link href="bootstrap-4.3.1-dist\css\bootstrap.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
+        <link href="css\style.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+    </head>
+
+    <body>
+
+            
+
+        <div id="ModalScrollable" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalScrollableTitle" >Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="saida-orch">
+                        <p id="modal-desc">
+                        </p>
+                        <form id="form-group-modal1">
+                            <div class="form-group-modal">
+                            </div>                      
+                        </form>
+                        <div id="resultado-orch">
+                                <div id="alerta-orch" role="alert"> 
+                                </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="CallOrchestration">Executar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        
+
+        <div id="logo_site">
+
+        </div>
+        <h1>Lista de Orchestrações JD Edwards E920</h1>
+
+        <div id="root">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                                <label for="InputServer">Server JDE</label>
+                                <input type="text" class="form-control" id="server" aria-describedby="Server JDE" placeholder="www.empresa.com">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="InputEmail1">Usuário</label>
+                            <input type="text" class="form-control" id="user" aria-describedby="Informar ususario" placeholder="Usuário">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="InputPassword1">Senha</label>
+                            <input type="password" class="form-control" id="password" placeholder="Senha">
+                        </div>
+                    </div>
+                </div>
+                
+                    <button type="button" class="btn btn-secondary" onclick="javascript:CallDiscover();">Chamar Orchestrações</button>
+            </form>
+
+        <div id="alerta" role="alert"> 
+
+        </div>
+
+        
+
+        <script src='js\OrchestrationList_JQuery.js'></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src='bootstrap-4.3.1-dist\js\bootstrap.min.js'></script>
+    </body>
+</html>

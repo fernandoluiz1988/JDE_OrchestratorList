@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <title>JDE - Orchestration List</title>
+        
+        <link href="bootstrap-4.3.1-dist\css\bootstrap.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
+        <link href="css\style.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+ 
+
+        <div id="logo_site">
+
+        </div>
+        <h1>Lista de Orchestrações JD Edwards E920</h1>
+
+        <div id="root">
+            <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Usuário</label>
+                        <input type="text" class="form-control" id="user" aria-describedby="Informar ususario" placeholder="Usuário">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Senha</label>
+                        <input type="password" class="form-control" id="password" placeholder="Senha">
+                    </div>
+                
+                    <button type="button" class="btn btn-secondary" onclick="javascript:CallDiscover();">Chamar Orchestrações</button>
+            </form>
+
+
+
+        </div>
+
+        <script src='js\OrchestrationList_JS.js'></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src='bootstrap-4.3.1-dist\js\bootstrap.min.js'></script>
+    </body>
+</html>

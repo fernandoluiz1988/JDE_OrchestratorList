@@ -1,0 +1,70 @@
+"definitions": {
+    "ORC_1802060010JDE": {
+        "type": "object",
+        "properties": {
+            "Credit_Manager": {
+                "type": "string",
+                "example": "string"
+            }
+        },
+        "xml": {
+            "name": "JDE_ORCH_03B_Customers_Over_Credit_Limit"
+        }
+    },
+    "ORC_1802060010JDE_Output": {
+        "type": "object",
+        "properties": {
+            "Count": {
+                "type": "string",
+                "example": "string"
+            }
+        },
+        "xml": {
+            "name": "JDE_ORCH_03B_Customers_Over_Credit_Limit"
+        }
+    },
+    "ORC_1802060008JDE": {
+        "type": "object",
+        "properties": {
+            "Collection_Manager": {
+                "type": "string",
+                "example": "string"
+            }
+        },
+        "xml": {
+            "name": "JDE_ORCH_03B_Deliquency_Notices_to_Approve"
+        }
+    },
+    "ORC_1802060008JDE_Output": {
+        "type": "object",
+        "properties": {
+            "Count": {
+                "type": "string",
+                "example": "string"
+            }
+        },
+        "xml": {
+            "name": "JDE_ORCH_03B_Deliquency_Notices_to_Approve"
+        }
+    },
+    "ORC_1802060011JDE": {
+        "type": "object",
+        "properties": {
+            "Credit_Manager": {
+                "type": "string",
+                "example": "string"
+            },
+            "ABC_Sales_Code": {
+                "type": "string",
+                "example": "string"
+            },
+            "Hold_Code": {
+                "type": "string",
+                "example": "string"
+            }
+        },
+        "xml": {
+            "name": "JDE_ORCH_03B_Important_Customers_On_Hold"
+        }
+    }
+}
