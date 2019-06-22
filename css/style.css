@@ -82,4 +82,17 @@ h7 {
   text-align: center;
 }
 
+#resultado-orch {
+  padding: 2px;
+  border: 5px;
+  border-color: rgb(59, 5, 66);
+  
+
+}
+
+.modal-header {
+  
+  color: white;
+}
+
 
