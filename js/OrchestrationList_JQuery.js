@@ -136,8 +136,9 @@ function CallDiscover() {
                 $(container).empty();
             }
         };
-
+        //Alerta para carregar os cards
         $("#alerta").attr("class","alert alert-secondary").html("Acessando JDE...      ").fadeIn(500);
+        //Sppiner
         $("#alerta").append('<div class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></div><div class="sr-only">...</div>');
 
         request.send();
@@ -194,26 +195,35 @@ function CallOrchestration(objeto, orchName){
     request.onload = function() {
         if (request.status === 200) {
             $("#alerta-orch").attr("class","alert alert-success").html("OK").fadeOut(2000);
-            //resulOrch = JSON.parse(request.response);
 
-            resultOrch = JSON.parse(request.response);
+            
+            var resultOrch = JSON.parse(request.response);
             var result1 = Object.keys(resultOrch);
-            var result2 = Object.values(resultOrch);
-            var result3 = result1[0];
-            console.log(resultOrch[0]);
+            var resultado = "<ul>";
+           
+            //Percorrer a raiz do nosso objeto de retorno
+            for (i=0;i<result1.length;i++){
+                resultado += "<li>" + result1[i] + ": ";
+                //Percorrer os demais 
+                var tipoElemento = (resultOrch[result1[i]]);
+                tipoElemento = typeof tipoElemento;
+                novoObjetoValues = Object.values(resultOrch[result1[i]]);
+                if (novoObjetoValues.length > 1 & tipoElemento == 'object'){
+                    //Recupera as chaves dos objetos seguintes
+                    resultado += PercorrerObjeto(resultOrch[result1], Object.keys(resultOrch[result1[i]]));
+                }else{
+                    resultado += resultOrch[result1[i]] +"</li>";
+                }
+            }
+            resultado += "</ul>";
 
-            $("#resultado-orch").css("background-color", "#cfcfcf");
+            $("#resultado-orch").css("background-color", "#cfcfcf").css("overflow","auto");
             if ($('#saida-orch h7').length == 0){
                 $('<h7>Resultado da Orchestração</h7>').insertBefore('#resultado-orch');
             }
-            $("#resultado-orch").html(result1); 
-            $("#resultado-orch").html(result2); 
-            
-            
-            console.log(result1);
+            $("#resultado-orch").html(resultado);
 
         }else {
-            //$("#resultado").html("Erro na consulta :(");
             $("#alerta-orch").attr("class","alert alert-danger").html("Erro na consulta :(").fadeIn(1000).fadeOut(6000);
             //apagar o conteúdo que existia
             $("#resultado-orch").empty();
@@ -221,11 +231,39 @@ function CallOrchestration(objeto, orchName){
     };
     
     $("#alerta-orch").attr("class","alert alert-secondary").html("Executando...").fadeIn(500);
-    request.send(objeto);
+    //Spinner para carregar o resultado
+    $("#alerta-orch").append('<div class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></div><div class="sr-only">...</div>');
 
+    request.send(objeto);
 }
 
+function PercorrerObjeto(objeto, keys){
+    var lista = "<ul>";
+    var qtdeFilhos;
 
+    
+    /*
+    for (i=0;i < keys.length;i++){
+    }*/
+    for (var j in keys) {
+        if (keys.hasOwnProperty(j)) {
+
+            //Verifica se o item atual possui mais filhos
+            var tipoElemento = (objeto[keys[j]]);
+            tipoElemento = typeof tipoElemento;
+            qtdeFilhos = Object.keys(objeto[keys[j]]).length;
+            if (qtdeFilhos > 1 & tipoElemento == 'object'){
+                // Recursividade - Envia o objeto da posição atual e os nomes dos filhos
+                lista += "<li>" + keys[j] + " : " + PercorrerObjeto(objeto[keys[j]],Object.keys(objeto[keys[j]]));
+            }else{
+                lista += "<li>"+ keys[j] + " : " + objeto[keys[j]]+"</li>";
+            }
+        }
+    }
+    
+    lista += "</ul>";
+    return lista;
+}
     
 
 
