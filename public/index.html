@@ -2,18 +2,51 @@
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width-device-width, initial-scale = 1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale = 1, shrink-to-fit=no">
         <title>JDE - Orchestration List</title>
         
         <link href="bootstrap-4.3.1-dist\css\bootstrap.min.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
         <link href="css\style.css" rel="stylesheet" />
+
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
     </head>
 
     <body>
 
-            
+
+        <!-- Cabeçalho do Site -->
+        <div class="container-fluid bg-topo">
+            <header class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a href="#" class="navbar-brand col-md-4">
+                        <img src="images\logo_transparent.png" alt="logo feshowtech" height="70" class= "d-inline-block align-top">
+                    </a>
+                    <div class = "col-md-8">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" 
+                        aria-controls="menu" aria-expended="false" aria-label="Menu Colapso">
+                            <span class="navbar-toggler-icon text-primary"></span>
+                        </button>
+                        <div id="menu" class="collapse navbar-collapse">
+                            <ul class="navbar-nav mr-auto text-primary">
+                                <li class="nav-item"   >
+                                    <a href="https://feshowsilva.wordpress.com" class="nav-link text-primary font-weight-bold">Blog</a>
+                                </li>
+                                <li class="nav-item"   >
+                                    <a href="#" class="nav-link text-primary font-weight-bold">Manage XML</a>
+                                </li>
+                                <li class="nav-item"   >
+                                    <a href="#" class="nav-link text-primary font-weight-bold">Contato</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+
+        
+        <!-- Modal para executar a Orchestration -->
 
         <div id="ModalScrollable" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
@@ -45,12 +78,12 @@
             </div>
         </div> 
 
-        
+        <!-- Form e Lista de Orchestrations -->
 
         <div id="logo_site">
 
         </div>
-        <h1>Lista de Orchestrações JD Edwards E920</h1>
+        <h1 class="bg-primary">Lista de Orchestrações JD Edwards E920</h1>
 
         <div id="root">
             <form>
@@ -74,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-secondary" onclick="javascript:CallDiscover();">Chamar Orchestrações</button>
+                <button type="button" class="btn btn-primary" onclick="javascript:CallDiscover();">Chamar Orchestrações</button>
                 <div id="alerta" role="alert"> 
                 </div>
             

@@ -11,9 +11,6 @@ $(window).ready(function(){
     $("input#user").attr('value','demo');
     $("input#password").attr('value','demo');
     $("input#server").attr('value','http://demo.steltix.com');
-
-
-
 });
 
 $(document).on('click', '.LinkAbrirModal', function(){
@@ -23,7 +20,7 @@ $(document).on('click', '.LinkAbrirModal', function(){
     
  });
 
-$("div#logo_site").append("<img src='images/logo_transparent.png'>");
+//$("div#logo_site").append("<img src='images/logo_transparent.png'>");
 
 function authenticateUser(user, password)
 {
@@ -121,8 +118,8 @@ function CallDiscover() {
                         var desc = GetOrchDescription(data1, orchName[i]);
                         
                         $(container).append('<div class="card LinkAbrirModal ponteiro" data-toggle="modal" data-target="#ModalScrollable" id="' + defKeys[i] +'"></div>');
-                        $("div#"+defKeys[i]).append('<h1>'+defKeys[i] +'</h1>');
-                        $("div#"+defKeys[i]).append('<h7>'+orchName[i] +'</h7>');
+                        $("div#"+defKeys[i]).append('<h1 class="bg-primary">'+defKeys[i] +'</h1>');
+                        $("div#"+defKeys[i]).append('<h6>'+orchName[i] +'</h6>');
                         $("div#"+defKeys[i]).append('<p>'+desc+'</p>');
 
                     }    
